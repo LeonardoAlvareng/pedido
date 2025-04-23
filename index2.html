@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Tenho algo pra te dizer...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #ffe4e1;
+      color: #333;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #texto {
+      font-size: 1.5rem;
+      max-width: 600px;
+      white-space: pre-line;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { background-color: transparent; }
+      50% { background-color: #333; }
+    }
+  </style>
+</head>
+<body>
+  <div id="texto"><span id="mensagem"></span><span class="cursor">|</span></div>
+
+  <script>
+    const frases = [
+      "Oi...",
+      "Antes de qualquer coisa, queria te dizer que...",
+      "Eu gosto de você, que você é especial para mim.",
+      "E tudo que eu quero...",
+      "É te amar e fazer você feliz.",
+      "Pensando nisso preparei mais uma coisa..."
+    ];
+
+    let fraseIndex = 0;
+    let charIndex = 0;
+    const velocidadeTexto = 50;
+    const delayEntreFrases = 1500;
+    const mensagemEl = document.getElementById("mensagem");
+
+    function digitarFrase() {
+      if (fraseIndex < frases.length) {
+        const frase = frases[fraseIndex];
+        if (charIndex < frase.length) {
+          mensagemEl.textContent += frase.charAt(charIndex);
+          charIndex++;
+          setTimeout(digitarFrase, velocidadeTexto);
+        } else {
+          mensagemEl.innerHTML += "<br/>";
+          fraseIndex++;
+          charIndex = 0;
+          setTimeout(digitarFrase, delayEntreFrases);
+        }
+      } else {
+
+        setTimeout(() => {
+          window.location.href = "file:///C:/Users/leona_qpxzx68/OneDrive/%C3%81rea%20de%20Trabalho/projetinho/index.html"; // Altere aqui para o link real do seu site
+        }, 2000);
+      }
+    }
+
+    digitarFrase();
+  </script>
+</body>
+</html>
