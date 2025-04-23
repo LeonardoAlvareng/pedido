@@ -36,22 +36,35 @@
   </style>
 </head>
 <body>
+
   <div id="texto"><span id="mensagem"></span><span class="cursor">|</span></div>
 
   <script>
     const frases = [
-      "Oi...",
-      "Antes de qualquer coisa, queria te dizer que...",
-      "Eu gosto de você, que você é especial para mim.",
-      "E tudo que eu quero...",
-      "É te amar e fazer você feliz.",
-      "Pensando nisso preparei mais uma coisa..."
+      "A outra metade é defeito\n",
+      "Você vai saber de qualquer jeito\n",
+      "Anjo ou animal, suave ou fatal\n",
+      "O que de um grande amor se espera\n",
+      "É que tenha fogo\n",
+      "Que domine o pensamento\n",
+      "E traga sentido novo\n",
+      "Que tenha paixão, desejo\n",
+      "Que tenha abraço e beijo\n",
+      "E seja a melhor sensação\n",
+      "Que preencha a vida vazia\n",
+      "Mande embora a agonia\n",
+      "E que traga paz pro coração\n",
+      "É você, é você\n",
+      "Que preencha a vida vazia\n",
+      "Mande embora a agonia\n",
+      "E que é dona do meu coração\n",
+      "É você, é você"
     ];
 
     let fraseIndex = 0;
     let charIndex = 0;
-    const velocidadeTexto = 50;
-    const delayEntreFrases = 1500;
+    const velocidadeTexto = 50; // velocidade da digitação
+    const delayEntreFrases = 1000; // pausa entre frases
     const mensagemEl = document.getElementById("mensagem");
 
     function digitarFrase() {
@@ -62,20 +75,20 @@
           charIndex++;
           setTimeout(digitarFrase, velocidadeTexto);
         } else {
-          mensagemEl.innerHTML += "<br/>";
           fraseIndex++;
           charIndex = 0;
           setTimeout(digitarFrase, delayEntreFrases);
         }
       } else {
-
+        // Redireciona após o texto terminar
         setTimeout(() => {
-          window.location.href = "file:///C:/Users/leona_qpxzx68/OneDrive/%C3%81rea%20de%20Trabalho/projetinho/index.html"; // Altere aqui para o link real do seu site
+          window.location.href = "https://SEU-LINK-AQUI"; // 👉 coloque o link do site "Namora comigo?"
         }, 2000);
       }
     }
 
     digitarFrase();
   </script>
+
 </body>
 </html>
